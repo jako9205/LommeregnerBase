@@ -26,3 +26,12 @@ testData.averageAge = [
     { a: {name: "Anna", age: 25}, b: {name: "Børge", age: 35}, c: {name: "Sok", age: 45}, expected: 35 }
 ];
 
+testData.vulnerability = [
+    {
+        a: {disruptive: 1, irreplacible: 1, damaging: 1}, 
+        b: {disruptive: 1, irreplacible: 1, damaging: 1},
+        c: {disruptive: 5, irreplacible: 5, damaging: 5},
+        expected: {p1: "Ikke Kritisk", p2: "Ikke Kritisk", p3: "Kritisk"}
+    }
+]
+

@@ -37,6 +37,17 @@ actions.averageAge = {
     }
 };
 
+// returns 'sårbarhed' of the three products in an object with properties p1, p2, p3
+// each product has properties disruptive, irreplacible, and damaging, 
+actions.vulnerability = {
+    types: [JSON.parse, JSON.parse, JSON.parse],
+    function: function(p1, p2, p3){
+
+        var vulnerabilities = {p1: -1, p2: -1, p3: -1};
+        return vulnerabilities;
+    }
+};
+
 window.runTest = function(actionName, actions, testData){
     var result = "";
     var functionUnderTest = actions[actionName].function;
@@ -55,7 +66,7 @@ window.testFunctionWith = function(testCase, functionUnderTest) {
                 </span>
                 <br>`;
     if(!passed)
-        result += `Got ${actual} with test input ${JSON.stringify(testCase)}.<br>`;
+        result += `Got ${JSON.stringify(actual)} with test input ${JSON.stringify(testCase)}.<br>`;
 
     return result;
 }
