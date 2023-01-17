@@ -37,14 +37,22 @@ actions.averageAge = {
     }
 };
 
-// returns 'sårbarhed' of the three products in an object with properties p1, p2, p3
+// returns sårbarhed of a single product
+actions.productVulnerability = {
+    types: [Number, Number, Number],
+    function: function(disruptive, irreplacible, damaging){
+
+        return "Kritisk";
+    }
+}
+
+// returns 'sårbarhed' of the three products in an array
 // each product has properties disruptive, irreplacible, and damaging, 
 actions.vulnerability = {
     types: [JSON.parse, JSON.parse, JSON.parse],
     function: function(p1, p2, p3){
-
-        var vulnerabilities = {p1: -1, p2: -1, p3: -1};
-        return vulnerabilities;
+            
+        return [ -1, -1, -1];
     }
 };
 
