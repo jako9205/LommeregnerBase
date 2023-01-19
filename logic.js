@@ -37,6 +37,28 @@ actions.averageAge = {
     }
 };
 
+// returns sårbarhed of a single product
+actions.productVulnerability = {
+    types: [Number, Number, Number],
+    function: function(disruptive, irreplacible, damaging){
+        var average = (disruptive + irreplacible + damaging) / 3;
+        var index = average -1;
+
+        var categories = ["Ikke kritisk","Lav Sårbarhed","Besværlig","Sårbar","Kritisk"]
+        return categories[index];
+    }
+}
+
+// returns 'sårbarhed' of the three products in an array
+// each product has properties disruptive, irreplacible, and damaging,
+actions.vulnerability = {
+    types: [JSON.parse, JSON.parse, JSON.parse],
+    function: function(p1, p2, p3){
+        return [ -1, -1, -1];
+    }
+};
+
+
 window.runTest = function(actionName, actions, testData){
     var result = "";
     var functionUnderTest = actions[actionName].function;
