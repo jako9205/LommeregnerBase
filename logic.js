@@ -52,10 +52,12 @@ actions.productVulnerability = {
 actions.vulnerability = {
     types: [JSON.parse, JSON.parse, JSON.parse],
     function: function(p1, p2, p3){
-        return [ -1, -1, -1];
+        var p1Vulnerability = actions.productVulnerability.function(p1.disruptive, p1.irreplacible, p1.damaging);
+        var p2Vulnerability = actions.productVulnerability.function(p2.disruptive, p2.irreplacible, p2.damaging);
+        var p3Vulnerability = actions.productVulnerability.function(p3.disruptive, p3.irreplacible, p3.damaging);
+        return [p1Vulnerability, p2Vulnerability, p3Vulnerability];
     }
 };
-
 
 window.runTest = function(actionName, actions, testData){
     var result = "";
