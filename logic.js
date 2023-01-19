@@ -41,7 +41,7 @@ actions.productVulnerability = {
     types: [Number, Number, Number],
     function: function(disruptive, irreplacible, damaging){
         var average = (disruptive + irreplacible + damaging) / 3;
-        var categories = ["Ikke kritisk","Lav Sårbarhed","Besværlig","Sårbar","Kritisk"]
+        var categories = ["Ikke Kritisk","Lav Sårbarhed","Besværlig","Sårbar","Kritisk"]
         return categories[average - 1];
     }
 }
