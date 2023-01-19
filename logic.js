@@ -52,10 +52,17 @@ actions.productVulnerability = {
 actions.vulnerability = {
     types: [JSON.parse, JSON.parse, JSON.parse],
     function: function(p1, p2, p3){
-        var p1Vulnerability = actions.productVulnerability.function(p1.disruptive, p1.irreplacible, p1.damaging);
-        var p2Vulnerability = actions.productVulnerability.function(p2.disruptive, p2.irreplacible, p2.damaging);
-        var p3Vulnerability = actions.productVulnerability.function(p3.disruptive, p3.irreplacible, p3.damaging);
-        return [p1Vulnerability, p2Vulnerability, p3Vulnerability];
+        var products = [p1, p2, p3];
+        var result = ["FEJL", "FEJL","FEJL"];
+        for(var i = 0; i <products.length; i++){
+            var currentProduct = products[i];
+            result[i] = actions.productVulnerability.function(
+                products[i].disruptive, 
+                products[i].irreplacible, 
+                products[i].damaging
+            )
+    }
+        return result;
     }
 };
 
