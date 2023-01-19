@@ -17,7 +17,6 @@ actions.add1 = {
 actions.sortOnLength = {
     types: [String, String, String],
     function: function(a, b, c){
-        return "a aa aaa";
     }    
 }
 
@@ -84,7 +83,7 @@ window.testFunctionWith = function(testCase, functionUnderTest) {
                 </span>
                 <br>`;
     if(!passed)
-        result += `Got ${actual} with test input ${JSON.stringify(testCase)}.<br>`;
+        result += `Got ${JSON.stringify(actual)} with test input ${JSON.stringify(testCase)}.<br>`;
 
     return result;
 }
