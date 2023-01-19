@@ -17,7 +17,6 @@ actions.add1 = {
 actions.sortOnLength = {
     types: [String, String, String],
     function: function(a, b, c){
-        return "a aa aaa";
     }    
 }
 
