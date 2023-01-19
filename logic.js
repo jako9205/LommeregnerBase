@@ -3,7 +3,7 @@ window.actions = {};
 actions.add = {};
 actions.add.types = [Number, Number, Number];
 actions.add.function = function(a, b, c){
-    return -1;
+    return (a + b + c);
 }
 
 actions.add1 = {
